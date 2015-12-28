@@ -7,8 +7,8 @@ var ignoreFolders = [];
 
 function walk(dir) {
     fs.readdirSync(dir).forEach(name => {
-        var fPath = path.join(dir, name);
-        var stat = fs.statSync(fPath),
+        var fPath = path.join(dir, name),
+            stat = fs.statSync(fPath),
             splitFolders = dir.split('\\'),
             folder = splitFolders[splitFolders.length - 1];
         if (stat.isFile() && (path.extname(fPath) === '.js' || path.extname(fPath) === '.html')) {
