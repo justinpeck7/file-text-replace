@@ -3,7 +3,10 @@ var fs = require('fs'),
     nameFrom = process.argv[2],
     nameTo = process.argv[3];
 
-var ignoreFolders = [];
+var config = {
+    ignoreFolders: [],
+    extensions: ['.js', '.html']
+};
 
 function walk(dir) {
     fs.readdirSync(dir).forEach(name => {
@@ -11,9 +14,9 @@ function walk(dir) {
             stat = fs.statSync(fPath),
             splitFolders = dir.split('\\'),
             folder = splitFolders[splitFolders.length - 1];
-        if (stat.isFile() && (path.extname(fPath) === '.js' || path.extname(fPath) === '.html')) {
+        if (stat.isFile() && config.extensions.indexOf(path.extname(fPath)) !== -1) {
             rename(fPath);
-        } else if (stat.isDirectory() && ignoreFolders.indexOf(folder) === -1) {
+        } else if (stat.isDirectory() && config.ignoreFolders.indexOf(folder) === -1) {
             walk(fPath);
         }
     });
