@@ -13,7 +13,7 @@ function walk(dir) {
         var fPath = path.join(dir, name),
             stat = fs.statSync(fPath),
             splitFolders = dir.split('\\'),
-            folder = splitFolders[splitFolders.length - 1];
+            folder = splitFolders.slice(-1);
         if (stat.isFile() && config.extensions.indexOf(path.extname(fPath)) !== -1) {
             rename(fPath);
         } else if (stat.isDirectory() && config.ignoreFolders.indexOf(folder) === -1) {
