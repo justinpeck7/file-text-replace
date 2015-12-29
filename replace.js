@@ -12,8 +12,8 @@ function walk(dir) {
     fs.readdirSync(dir).forEach(name => {
         var fPath = path.join(dir, name),
             stat = fs.statSync(fPath),
-            splitFolders = dir.split('\\'),
-            folder = splitFolders.slice(-1);
+            splitFolders = dir.split(path.sep),
+            folder = splitFolders.slice(-1)[0];
         if (stat.isFile() && config.extensions.indexOf(path.extname(fPath)) !== -1) {
             rename(fPath);
         } else if (stat.isDirectory() && config.ignoreFolders.indexOf(folder) === -1) {
