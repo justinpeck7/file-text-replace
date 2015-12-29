@@ -1,8 +1,7 @@
-# node-utils
-some utils. for node
+#File text replace
+simple node app to find and replace text in files
 
-##rename:
-
+##Usage:
 `node rename *fromString* *toString*`
 
 Searches files for *fromString*, replaces all instances with *toString*
