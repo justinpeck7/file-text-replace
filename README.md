@@ -1,7 +1,9 @@
 #File text replace
-simple node app to find and replace text in files
+simple command line node app to find and replace text in files
 
 ##Usage:
-`node replace *fromString* *toString*`
+install with `npm link`
+
+`nreplace {fromString} {toString}`
 
 Searches files for *fromString*, replaces all instances with *toString*
