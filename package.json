@@ -1,0 +1,10 @@
+{
+  "name": "file-text-replace",
+  "version": "1.0.0",
+  "description": "Recursively search for and replace text in files",
+  "author": "Justin Peck",
+  "bin": {
+    "nreplace": "replace.js"
+  },
+  "license": "ISC"
+}
