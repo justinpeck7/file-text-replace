@@ -8,7 +8,7 @@ var fs = require('fs'),
 
 if (nameTo === undefined) {
     console.log('\x1b[31m', 'Must specify string to search for and replace', '\x1b[0m');
-    console.log('\x1b[35m', 'nreplace [FROMTEXT] [TOTEXT]', '\x1b[0m');
+    console.log('\x1b[35m', 'ftr [FROMTEXT] [TOTEXT]', '\x1b[0m');
     process.exit();
 }
 
